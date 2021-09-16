@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Sintelaris/CLionProjects/untitled/Character.cpp
+Character.h
+C:/Users/Sintelaris/CLionProjects/untitled/Character.h
+ctime
+-
+
+C:/Users/Sintelaris/CLionProjects/untitled/Character.h
+string
+-
+ctime
+-
+
+C:/Users/Sintelaris/CLionProjects/untitled/Game.cpp
+Game.h
+C:/Users/Sintelaris/CLionProjects/untitled/Game.h
+
+C:/Users/Sintelaris/CLionProjects/untitled/Game.h
+Map.cpp
+C:/Users/Sintelaris/CLionProjects/untitled/Map.cpp
+iostream
+-
+Game.h
+C:/Users/Sintelaris/CLionProjects/untitled/Game.h
+
+C:/Users/Sintelaris/CLionProjects/untitled/Map.cpp
+Map.h
+C:/Users/Sintelaris/CLionProjects/untitled/Map.h
+
+C:/Users/Sintelaris/CLionProjects/untitled/Map.h
+Character.cpp
+C:/Users/Sintelaris/CLionProjects/untitled/Character.cpp
+
+C:/Users/Sintelaris/CLionProjects/untitled/main.cpp
+Game.cpp
+C:/Users/Sintelaris/CLionProjects/untitled/Game.cpp
+
