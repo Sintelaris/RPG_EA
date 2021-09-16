@@ -7,7 +7,7 @@
 using namespace std;
 void Map::walk(int (*arr)[5]) {
 
-    cout << "You can move, rest and attack";
+    cout << "You can move, rest and attack.......";
 
 }
 
