@@ -34,8 +34,8 @@ public:
 
 class Game {
 private:
-    bool win_or_lose = 0;
-    bool game_continue = 0;
+    bool win_or_lose;
+    bool game_continue;
     Map field;
 public:
     int isRunning = 1;

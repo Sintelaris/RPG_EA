@@ -22,6 +22,9 @@ private:
     string name;
     int maxHP = 50, HP, atk = 5, exp = 0, level = 0;
 public:
+    int getExp() const;
+
+public:
     int getMaxHp() const;
 
 public:
@@ -37,6 +40,20 @@ public:
     void setNavY(int navY);
 
     void setCharType(int type);
+
+    int getAtk() const;
+
+    void setExp(int exp);
+
+    const string &getName() const;
+
+    int getLevel() const;
+
+    void setName(const string &name);
+
+    void setAtk(int atk);
+
+    void setLevel(int level);
 
 
 };

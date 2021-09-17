@@ -4,7 +4,8 @@
 using namespace std;
 
 int main() {
-    Game RPG_EA;
+    cout << "asd";
+    /*Game RPG_EA;
 
 
     while (RPG_EA.isRunning){
