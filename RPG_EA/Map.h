@@ -19,14 +19,19 @@ private:
     char checkS(int Y);
     char checkD(int X);
     char checkW(int Y);
-    void moveEnemy();
+    void update();
+    void AIwalk(int (*arr)[5], Character enemy);
+    void Attack_enemy(int positionY, int positionX);
+    void add_Experience(int add_exp);
 public:
-    Map();
+    void createMap();
     int map[5][5];
     void walk(int (*arr)[5], Character current);
     void fill(int (*arr)[5], Character player);
     int random(int num);
     void move(char direction, Character Body);
+    void rest(Character current);
+    void explore(Character current);
 };
 
 

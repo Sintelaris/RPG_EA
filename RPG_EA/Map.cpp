@@ -5,9 +5,11 @@
 #include "Map.h"
 #include <iostream>
 #include <string>
+#include <cctype>
 
 using namespace std;
-Map::Map() {
+
+void Map::createMap() {
     map[5][5] = {0};
     fill(map, Player);
 }
@@ -119,31 +121,31 @@ void Map::fill(int (*arr)[5],Character player){
     int e2X = random(4), e2Y = random(4), e3X = random(4), e3Y = random(4), e4X = random(4), e4Y = random(4), e5X = random(4), e5Y = random(4);
     if (e2Y != enemy1.navY && e2X != enemy1.navX){
         enemy2.setCharType(2);
-        enemy2.setNavY(random(4)); enemy1.setNavX(random(4));
+        enemy2.setNavY(e2Y); enemy2.setNavX(e2X);
         arr[enemy2.navY][enemy2.navX] = 2;
     } else {
         while ((e2Y == enemy1.navY && e2X == enemy1.navX)){
             e2Y = random(4);
         }
         enemy2.setCharType(2);
-        enemy2.setNavY(random(4)); enemy1.setNavX(random(4));
+        enemy2.setNavY(e2Y); enemy2.setNavX(e2X);
         arr[enemy2.navY][enemy2.navX] = 2;
     }
     if ((e3Y != enemy1.navY && e3X != enemy1.navX) && (e3Y != e2Y && e3X != e2X)){
         enemy3.setCharType(2);
-        enemy3.setNavY(random(4)); enemy1.setNavX(random(4));
+        enemy3.setNavY(e3Y); enemy2.setNavX(e3X);
         arr[enemy3.navY][enemy3.navX] = 2;
     } else {
         while ((e3Y == enemy1.navY && e3X == enemy1.navX) || (e3Y == e2Y && e3X == e2X)){
             e3Y = random(4);
         }
         enemy3.setCharType(2);
-        enemy3.setNavY(random(4)); enemy1.setNavX(random(4));
+        enemy3.setNavY(e3Y); enemy2.setNavX(e3X);
         arr[enemy3.navY][enemy3.navX] = 2;
     }
     if ((e4Y != enemy1.navY && e4X != enemy1.navX) && (e4Y != e3Y && e4X != e3Y) && (e4Y != e2Y && e4X != e2X)){
         enemy4.setCharType(2);
-        enemy4.setNavY(random(4)); enemy1.setNavX(random(4));
+        enemy4.setNavY(e4Y); enemy4.setNavX(e4X);
         arr[enemy4.navY][enemy4.navX] = 2;
     } else {
         while ((e4Y == enemy1.navY && e4X == enemy1.navX) || (e4Y == e3Y && e4X == e3Y) || (e4Y == e2Y && e4X == e2X))
@@ -152,18 +154,22 @@ void Map::fill(int (*arr)[5],Character player){
             e4X = random(4);
         }
         enemy4.setCharType(2);
-        enemy4.setNavY(random(4)); enemy1.setNavX(random(4));
+        enemy4.setNavY(e4Y); enemy4.setNavX(e4X);
         arr[enemy4.navY][enemy4.navX] = 2;
     }
     if ((e5Y != enemy1.navY && e5X != enemy1.navX) && (e5Y != e4Y && e5X != e4Y) && (e5Y != e3Y && e5X != e3Y) && (e5Y != e2Y && e5X != e2X)){
         enemy5.setCharType(2);
-        enemy5.setNavY(random(4)); enemy1.setNavX(random(4));
+        enemy5.setNavY(e5Y); enemy5.setNavX(e5X);
+        arr[enemy5.navY][enemy5.navX] = 2;
     } else {
         while ((e5Y == enemy1.navY && e5X == enemy1.navX) || (e5Y == e4Y && e5X == e4Y) || (e5Y == e3Y && e5X == e3Y) || (e5Y == e2Y && e5X == e2X))
         {
             e5Y = random(4);
             e5X = random(4);
         }
+        enemy5.setCharType(2);
+        enemy5.setNavY(e5Y); enemy5.setNavX(e5X);
+        arr[enemy5.navY][enemy5.navX] = 2;
     }
 
 };
@@ -243,9 +249,55 @@ void Map::move(char direction, Character Body){
         };
     }
 }
-void Map::moveEnemy(){
+void Map::AIwalk(int (*arr)[5], Character enemy){
+    string directionAV = checkMove(enemy);
+    string choice;
+    if (checkerEnemy(enemy.navY, enemy.navX)){
+        choice = "fre";
+        if (enemy.getHp() < 10){
+            rest(enemy);
+        } else{
+            switch (choice[random(2)]) {
+                case 'f':
+                    cout << "\nYou've been attacked by ENEMY that locates at" << enemy.navY << " " << enemy.navX << endl;
+                    Player.setHp(Player.getHp() - enemy.getAtk());
+                    cout << "Your current HP is " << Player.getHp() << endl;
+                    break;
+                case 'r':
+                    rest(enemy);
+                    break;
+                case 'e':
+                    int i = 0;
+                    while (directionAV[i] == '0'){
+                        i++;
+                    }
+                    move(tolower(directionAV[i]), enemy);
+                    break;
+            }
+        }
 
-};
+    }
+    else {
+        choice = "re";
+        switch (choice[random(1)]) {
+            case 'r':
+                rest(enemy);
+                break;
+            case 'e':
+                int i = 0;
+                while (directionAV[i] == '0'){
+                    i++;
+                }
+                move(tolower(directionAV[i]), enemy);
+                break;
+        }
+    }
+
+
+}
+void Map::update() {
+
+}
 int Map::random(int num) {
     srand(time(NULL));
     return rand()%num;
