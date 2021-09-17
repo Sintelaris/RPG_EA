@@ -96,36 +96,52 @@ void Map::walk(int (*arr)[5], Character current) {
 }
 
 void Map::fill(int (*arr)[5],Character player){
-    arr[5][5] = 0;
     arr[player.navY][player.navX] = 1;
-
-    Character enemy1(2,  random(4), random(4));
+    enemy1.setCharType(2);
+    enemy1.setNavY(random(4)); enemy1.setNavX(random(4));
+    arr[enemy1.navY][enemy1.navX] = 2;
     int e2X = random(4), e2Y = random(4), e3X = random(4), e3Y = random(4), e4X = random(4), e4Y = random(4), e5X = random(4), e5Y = random(4);
     if (e2Y != enemy1.navY && e2X != enemy1.navX){
-        Character enemy2(2, e2Y, e2X);
+        enemy2.setCharType(2);
+        enemy2.setNavY(random(4)); enemy1.setNavX(random(4));
+        arr[enemy2.navY][enemy2.navX] = 2;
     } else {
         while ((e2Y == enemy1.navY && e2X == enemy1.navX)){
             e2Y = random(4);
         }
+        enemy2.setCharType(2);
+        enemy2.setNavY(random(4)); enemy1.setNavX(random(4));
+        arr[enemy2.navY][enemy2.navX] = 2;
     }
     if ((e3Y != enemy1.navY && e3X != enemy1.navX) && (e3Y != e2Y && e3X != e2X)){
-        Character enemy3(2, e3Y, e3X);
+        enemy3.setCharType(2);
+        enemy3.setNavY(random(4)); enemy1.setNavX(random(4));
+        arr[enemy3.navY][enemy3.navX] = 2;
     } else {
         while ((e3Y == enemy1.navY && e3X == enemy1.navX) || (e3Y == e2Y && e3X == e2X)){
             e3Y = random(4);
         }
+        enemy3.setCharType(2);
+        enemy3.setNavY(random(4)); enemy1.setNavX(random(4));
+        arr[enemy3.navY][enemy3.navX] = 2;
     }
     if ((e4Y != enemy1.navY && e4X != enemy1.navX) && (e4Y != e3Y && e4X != e3Y) && (e4Y != e2Y && e4X != e2X)){
-        Character enemy4(2, e4Y, e4X);
+        enemy4.setCharType(2);
+        enemy4.setNavY(random(4)); enemy1.setNavX(random(4));
+        arr[enemy4.navY][enemy4.navX] = 2;
     } else {
         while ((e4Y == enemy1.navY && e4X == enemy1.navX) || (e4Y == e3Y && e4X == e3Y) || (e4Y == e2Y && e4X == e2X))
         {
             e4Y = random(4);
             e4X = random(4);
         }
+        enemy4.setCharType(2);
+        enemy4.setNavY(random(4)); enemy1.setNavX(random(4));
+        arr[enemy4.navY][enemy4.navX] = 2;
     }
     if ((e5Y != enemy1.navY && e5X != enemy1.navX) && (e5Y != e4Y && e5X != e4Y) && (e5Y != e3Y && e5X != e3Y) && (e5Y != e2Y && e5X != e2X)){
-        Character enemy5(2, e5Y, e5X);
+        enemy5.setCharType(2);
+        enemy5.setNavY(random(4)); enemy1.setNavX(random(4));
     } else {
         while ((e5Y == enemy1.navY && e5X == enemy1.navX) || (e5Y == e4Y && e5X == e4Y) || (e5Y == e3Y && e5X == e3Y) || (e5Y == e2Y && e5X == e2X))
         {
@@ -134,11 +150,10 @@ void Map::fill(int (*arr)[5],Character player){
         }
     }
 
-
 };
 
-bool Map::checkerEnemy(int positionX, int positionY){
-    if (    (map[positionY][positionX] != map[positionY - 1][positionX - 1] and map[positionY - 1][positionX - 1] != 0) and
+bool Map::checkerEnemy(int positionY, int positionX){
+    /*if (    (map[positionY][positionX] != map[positionY - 1][positionX - 1] and map[positionY - 1][positionX - 1] != 0) and
             (map[positionY][positionX] != map[positionY - 1][positionX] and map[positionY - 1][positionX] != 0) and
             (map[positionY][positionX] != map[positionY - 1][positionX + 1] and map[positionY - 1][positionX + 1] != 0) and
             (map[positionY][positionX] != map[positionY][positionX - 1] and map[positionY][positionX - 1] != 0) and
@@ -152,6 +167,43 @@ bool Map::checkerEnemy(int positionX, int positionY){
         (map[positionY][positionX] != map[positionY][positionX + 1] and map[positionY][positionX + 1] != 0) and
         (map[positionY][positionX] != map[positionY + 1][positionX] and map[positionY + 1][positionX] != 0))
         return false;
+}
+
+string Map::checkMove(Character player){
+    string checker;
+    checker = checkW(player.navX);
+    checker += checkA(player.navY);
+    checker += checkS(player.navX);
+    checker += checkD(player.navY);
+    return checker;
+}
+char Map::checkW(int X) {
+    if (X != 0){
+        return 'W';
+    } else {
+        return '0';
+    }
+}
+char Map::checkA(int Y){
+    if (Y != 0) {
+        return 'A';
+    } else{
+        return '0';
+    }
+}
+char Map::checkS(int X){
+    if (X != 4) {
+        return 'S';
+    } else{
+        return '0';
+    }
+}
+char Map::checkD(int Y){
+    if (Y != 4) {
+        return 'D';
+    } else{
+        return '0';
+    }
 }
 
 void Map::move(char direction, Character Body){
@@ -174,7 +226,9 @@ void Map::move(char direction, Character Body){
         };
     }
 }
+void Map::moveEnemy(){
 
+};
 int Map::random(int num) {
     srand(time(NULL));
     return rand()%num;

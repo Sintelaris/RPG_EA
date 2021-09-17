@@ -16,7 +16,7 @@ public:
     int navX, navY;
 
     Character();
-    Character(int enemy, int X, int Y);
+    //Character(int enemy);
 
 private:
     string name;

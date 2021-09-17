@@ -16,7 +16,7 @@ Character::Character() {
     navY = 0;
 }
 
-Character::Character(int enemy, int Y, int X) {
+/*Character::Character(int enemy) {
     maxHP = 50;
     HP = maxHP;
     atk = 8;
