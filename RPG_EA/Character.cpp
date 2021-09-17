@@ -23,7 +23,34 @@ Character::Character(int enemy, int Y, int X) {
     exp = 0;
     level = 0;
     CharType = enemy;
-    navX = X;
-    navY = Y;
+}*/
+void Character::setNavX(int navX) {
+    this->navX = navX;
 }
+
+void Character::setNavY(int navY) {
+    this->navY = navY;
+}
+
+void Character::setCharType(int type){
+    CharType = type;
+}
+
+void Character::setMaxHp(int maxHp) {
+    maxHP = maxHp;
+}
+
+void Character::setHp(int hp) {
+    HP = hp;
+}
+
+int Character::getMaxHp() const {
+    return maxHP;
+}
+
+int Character::getHp() const {
+    return HP;
+}
+
+
 

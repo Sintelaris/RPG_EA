@@ -20,7 +20,24 @@ public:
 
 private:
     string name;
-    int maxHP, HP, atk, exp, level;
+    int maxHP = 50, HP, atk = 5, exp = 0, level = 0;
+public:
+    int getMaxHp() const;
+
+public:
+    int getHp() const;
+
+public:
+    void setHp(int hp);
+
+    void setMaxHp(int maxHp);
+
+    void setNavX(int navX);
+
+    void setNavY(int navY);
+
+    void setCharType(int type);
+
 
 };
 

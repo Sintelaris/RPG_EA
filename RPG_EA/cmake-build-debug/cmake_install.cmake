@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Sintelaris/CLionProjects/untitled
+# Install script for directory: C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Sintelaris/CLionProjects/untitled/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
