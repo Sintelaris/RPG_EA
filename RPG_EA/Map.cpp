@@ -52,7 +52,7 @@ void Map::walk() {
     cout << "You can move and rest. Input 'move' to select move direction, input 'rest' to heal yourself." << endl;
     string action;
     bool attack_availability = false;
-    if(checkerEnemy(Player.navY, Player.navX)) {
+    if(checkerEnemy(Player.navY, Player.navX, Player.CharType)) {
         cout << "Enemy is near. You are also able to attack. Input 'attack' to attack." << endl;
         attack_availability = true;
     }
@@ -62,7 +62,7 @@ void Map::walk() {
         cout << "Input direction. 'w' to move up, 'a' to move left, 's' to move down, 'd' to move right." << endl;
         bool check_move = true;
         string Direction_available = checkMove(Player.navY, Player.navX); //WASD
-        cout << Direction_available;
+        cout << Direction_available << endl;
         while (check_move) {
             char direction;
             cin >> direction;
@@ -172,7 +172,7 @@ void Map::fill(){
     ifEmpty(plY, plX, 1, &Player);
 }
 
-bool Map::checkerEnemy(int positionY, int positionX){
+bool Map::checkerEnemy(int positionY, int positionX, int CharType) {
     /*if (    (map[positionY][positionX] != map[positionY - 1][positionX - 1] and map[positionY - 1][positionX - 1] != 0) and
             (map[positionY][positionX] != map[positionY - 1][positionX] and map[positionY - 1][positionX] != 0) and
             (map[positionY][positionX] != map[positionY - 1][positionX + 1] and map[positionY - 1][positionX + 1] != 0) and
@@ -182,47 +182,64 @@ bool Map::checkerEnemy(int positionY, int positionX){
             (map[positionY][positionX] != map[positionY + 1][positionX] and map[positionY + 1][positionX] != 0) and
             (map[positionY][positionX] != map[positionY + 1][positionX + 1] and map[positionY + 1][positionX + 1] != 0)
             )*/
-    if ((map[positionY][positionX] != map[positionY - 1][positionX] && map[positionY - 1][positionX] != 0) ||
-        (map[positionY][positionX] != map[positionY][positionX - 1] && map[positionY][positionX - 1] != 0) ||
-        (map[positionY][positionX] != map[positionY][positionX + 1] && map[positionY][positionX + 1] != 0) ||
-        (map[positionY][positionX] != map[positionY + 1][positionX] && map[positionY + 1][positionX] != 0))
+
+    if ((CharType != map[positionY - 1][positionX] && map[positionY - 1][positionX] != 0) ||
+        (CharType != map[positionY][positionX - 1] && map[positionY][positionX - 1] != 0) ||
+        (CharType != map[positionY][positionX + 1] && map[positionY][positionX + 1] != 0) ||
+        (CharType != map[positionY + 1][positionX] && map[positionY + 1][positionX] != 0))
         return true;
     else return false;
 }
 
 string Map::checkMove(int navY, int navX){
     string checker;
-    checker = checkW(navX);
-    checker += checkA(navY);
-    checker += checkS(navX);
-    checker += checkD(navY);
+    checker = checkW(navY, navX);
+    checker += checkA(navX, navY);
+    checker += checkS(navY, navX);
+    checker += checkD(navX, navY);
     return checker;
 }
-char Map::checkW(int X) {
-    if (X != 0){
+char Map::checkW(int Y, int X) {
+    if (Y != 0){
+        if (map[Y-1][X] != 0) {
+            return '0';
+        }
         return 'W';
-    } else {
+    }
+    else {
         return '0';
     }
 }
-char Map::checkA(int Y){
-    if (Y != 0) {
+char Map::checkA(int X, int Y){
+    if (X != 0) {
+        if (map[Y][X-1] != 0) {
+            return '0';
+        }
         return 'A';
-    } else{
+    }
+    else{
         return '0';
     }
 }
-char Map::checkS(int X){
-    if (X != 4) {
-        return 'S';
-    } else{
-        return '0';
-    }
-}
-char Map::checkD(int Y){
+char Map::checkS(int Y, int X){
     if (Y != 4) {
+        if (map[Y+1][X] != 0) {
+            return '0';
+        }
+        return 'S';
+    }
+    else{
+        return '0';
+    }
+}
+char Map::checkD(int X, int Y){
+    if (X != 4) {
+        if (map[Y][X+1] != 0) {
+            return '0';
+        }
         return 'D';
-    } else{
+    }
+    else{
         return '0';
     }
 }
@@ -232,26 +249,34 @@ void Map::move(char direction, Character *Body){
         case 'w': {
             map[Body->navY][Body->navX] = 0;
             map[Body->navY - 1][Body->navX] = Body->CharType;
-        };
+            Body->setNavY(Body->navY - 1);
+            break;
+        }
         case 'a':{
             map[Body->navY][Body->navX] = 0;
             map[Body->navY][Body->navX - 1] = Body->CharType;
-        };
+            Body->setNavX(Body->navX - 1);
+            break;
+        }
         case 's':{
             map[Body->navY][Body->navX] = 0;
             map[Body->navY + 1][Body->navX] = Body->CharType;
-        };
+            Body->setNavY(Body->navY + 1);
+            break;
+        }
         case 'd':{
             map[Body->navY][Body->navX] = 0;
             map[Body->navY][Body->navX + 1] = Body->CharType;
-        };
+            Body->setNavX(Body->navX + 1);
+            break;
+        }
     }
 }
 void Map::AIwalk(Character *enemy){
     string directionAV = checkMove(enemy->navY, enemy->navX);
-    string choice;
-    if (checkerEnemy(enemy->navY, enemy->navX)){
-        choice = "fre";
+    int choice;
+    if (checkerEnemy(enemy->navY, enemy->navX, enemy->CharType)){
+        choice = random(2);
         if (enemy->getHp() < 20){
             if (enemy->getHp() < enemy->getMaxHp()){
                 enemy->setHp(enemy->getHp()+5);
@@ -260,46 +285,58 @@ void Map::AIwalk(Character *enemy){
                 enemy->setHp(enemy->getMaxHp());
             }
         } else{
-            char rand = choice[random(2)];
-            switch (rand) {
-                case 'f':
-                    cout << "\nYou've been attacked by ENEMY that locates at " << enemy->navY << " " << enemy->navX << endl;
+            switch (choice) {
+                case 0:
+                    cout << "\nYou've been attacked by ENEMY that locates at " << enemy->navX << " " << enemy->navY << endl;
                     Player.setHp(Player.getHp() - enemy->getAtk());
                     cout << "Your current HP is " << Player.getHp() << endl;
                     break;
-                case 'r':
+                case 1:{
+                    int i = 0;
+                    while (directionAV[i] == '0'){
+                        i++;
+                    }
+                    cout << enemy->navX << " " << enemy->navY << " has moved";
+                    move(tolower(directionAV[i]), enemy);
+                    cout << " to " << enemy->navX << " " << enemy->navY << endl;
+                    break;
+                }
+
+                case 2:
+                {
                     if (enemy->getHp() < enemy->getMaxHp()){
                         enemy->setHp(enemy->getHp()+5);
                     }
                     if (enemy->getHp() > enemy->getMaxHp()){
                         enemy->setHp(enemy->getMaxHp());
                     }
+                    cout << enemy->navX << " " << enemy->navY << " has rest" << endl;
                     break;
-                case 'e':
-                    int i = 0;
-                    while (directionAV[i] == '0'){
-                        i++;
-                    }
-                    move(tolower(directionAV[i]), enemy);
-                    break;
+                }
             }
         }
 
     }
     else {
-        choice = "re";
-        char rand = choice[random(1)];
-        switch (rand) {
-            case 'r':
-                rest(enemy);
-                break;
-            case 'e':
+        choice = random(1);
+        switch (choice) {
+            case 0:
+            {
                 int i = 0;
                 while (directionAV[i] == '0'){
                     i++;
                 }
+                cout << enemy->navX << " " << enemy->navY << " has moved";
                 move(tolower(directionAV[i]), enemy);
+                cout << " to " << enemy->navX << " " << enemy->navY << endl;
                 break;
+            }
+
+            case 1: {
+                rest(enemy);
+                cout << enemy->navX << " " << enemy->navY << " has rest" << endl;
+                break;
+            }
         }
     }
 
@@ -314,7 +351,7 @@ void Map::walkEnemy() {
 }
 int Map::random(int num) {
     srand(time(NULL));
-    return rand()%num;
+    return rand() % num;
 }
 void Map::Attack_enemy(int positionY, int positionX){
     if (enemy1.navY == positionY && enemy1.navX == positionX){

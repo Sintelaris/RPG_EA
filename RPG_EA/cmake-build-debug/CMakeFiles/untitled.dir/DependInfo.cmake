@@ -8,13 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Character.cpp" "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug/CMakeFiles/untitled.dir/Character.cpp.obj"
-  "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Game.cpp" "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug/CMakeFiles/untitled.dir/Game.cpp.obj"
-  "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Item.cpp" "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug/CMakeFiles/untitled.dir/Item.cpp.obj"
-  "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Map.cpp" "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug/CMakeFiles/untitled.dir/Map.cpp.obj"
-  "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/main.cpp" "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug/CMakeFiles/untitled.dir/main.cpp.obj"
+  "/Users/amira/CLionProjects/RPG_EA/RPG_EA/Character.cpp" "/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/CMakeFiles/untitled.dir/Character.cpp.o"
+  "/Users/amira/CLionProjects/RPG_EA/RPG_EA/Game.cpp" "/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/CMakeFiles/untitled.dir/Game.cpp.o"
+  "/Users/amira/CLionProjects/RPG_EA/RPG_EA/Item.cpp" "/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/CMakeFiles/untitled.dir/Item.cpp.o"
+  "/Users/amira/CLionProjects/RPG_EA/RPG_EA/Map.cpp" "/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/CMakeFiles/untitled.dir/Map.cpp.o"
+  "/Users/amira/CLionProjects/RPG_EA/RPG_EA/main.cpp" "/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/CMakeFiles/untitled.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "MSVC")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

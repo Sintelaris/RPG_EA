@@ -14,12 +14,12 @@ class Map {
 private:
     Character Player;
     Character enemy1, enemy2, enemy3, enemy4, enemy5;
-    bool checkerEnemy(int positionX, int positionY);
+    bool checkerEnemy(int positionY, int positionX, int CharType);
     string checkMove(int navY, int navX);
-    char checkA(int X);
-    char checkS(int Y);
-    char checkD(int X);
-    char checkW(int Y);
+    char checkA(int Y, int X);
+    char checkS(int X, int Y);
+    char checkD(int Y, int X);
+    char checkW(int X, int Y);
     void AIwalk(Character *enemy);
     void Attack_enemy(int positionY, int positionX);
     void setPositions(int CharType, int navY, int navX, Character *current);

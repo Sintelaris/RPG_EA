@@ -1,3 +1,3 @@
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug/CMakeFiles/untitled.dir
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/CMakeFiles/untitled.dir

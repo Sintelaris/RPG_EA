@@ -6,21 +6,21 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Character.h
+/Users/amira/CLionProjects/RPG_EA/RPG_EA/Character.h
 string
 -
 ctime
 -
 Item.h
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Item.h
+/Users/amira/CLionProjects/RPG_EA/RPG_EA/Item.h
 
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Item.h
+/Users/amira/CLionProjects/RPG_EA/RPG_EA/Item.h
 string
 -
 
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Map.cpp
+/Users/amira/CLionProjects/RPG_EA/RPG_EA/Map.cpp
 Map.h
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Map.h
+/Users/amira/CLionProjects/RPG_EA/RPG_EA/Map.h
 iostream
 -
 string
@@ -30,9 +30,9 @@ cctype
 fstream
 -
 
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Map.h
+/Users/amira/CLionProjects/RPG_EA/RPG_EA/Map.h
 Character.h
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Character.h
+/Users/amira/CLionProjects/RPG_EA/RPG_EA/Character.h
 ctime
 -
 

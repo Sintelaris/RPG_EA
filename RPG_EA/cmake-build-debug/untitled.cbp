@@ -4,112 +4,108 @@
 	<Project>
 		<Option title="untitled"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="msvc8"/>
+		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug"/>
+				<Option working_dir="/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 all"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="untitled">
-				<Option output="C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug/untitled.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="msvc8"/>
-				<Compiler>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\ATLMFC\include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 untitled"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="untitled/fast">
-				<Option output="C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug/untitled.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="msvc8"/>
-				<Compiler>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\ATLMFC\include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 untitled/fast"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug"/>
+				<Option working_dir="/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="untitled">
+				<Option output="/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/untitled" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="untitled/fast">
+				<Option output="/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/untitled" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/amira/CLionProjects/RPG_EA/RPG_EA/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Character.cpp">
+		<Unit filename="/Users/amira/CLionProjects/RPG_EA/RPG_EA/Character.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Character.h">
+		<Unit filename="/Users/amira/CLionProjects/RPG_EA/RPG_EA/Character.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Game.cpp">
+		<Unit filename="/Users/amira/CLionProjects/RPG_EA/RPG_EA/Game.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Game.h">
+		<Unit filename="/Users/amira/CLionProjects/RPG_EA/RPG_EA/Game.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Item.cpp">
+		<Unit filename="/Users/amira/CLionProjects/RPG_EA/RPG_EA/Item.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Item.h">
+		<Unit filename="/Users/amira/CLionProjects/RPG_EA/RPG_EA/Item.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Map.cpp">
+		<Unit filename="/Users/amira/CLionProjects/RPG_EA/RPG_EA/Map.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Map.h">
+		<Unit filename="/Users/amira/CLionProjects/RPG_EA/RPG_EA/Map.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/main.cpp">
+		<Unit filename="/Users/amira/CLionProjects/RPG_EA/RPG_EA/main.cpp">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/CMakeLists.txt">
+		<Unit filename="/Users/amira/CLionProjects/RPG_EA/RPG_EA/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
