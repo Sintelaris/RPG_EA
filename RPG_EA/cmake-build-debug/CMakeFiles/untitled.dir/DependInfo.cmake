@@ -8,10 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Character.cpp" "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/cmake-build-debug/CMakeFiles/untitled.dir/Character.cpp.obj"
-  "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Game.cpp" "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/cmake-build-debug/CMakeFiles/untitled.dir/Game.cpp.obj"
-  "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Map.cpp" "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/cmake-build-debug/CMakeFiles/untitled.dir/Map.cpp.obj"
-  "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/main.cpp" "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/cmake-build-debug/CMakeFiles/untitled.dir/main.cpp.obj"
+  "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Character.cpp" "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug/CMakeFiles/untitled.dir/Character.cpp.obj"
+  "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Game.cpp" "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug/CMakeFiles/untitled.dir/Game.cpp.obj"
+  "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Item.cpp" "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug/CMakeFiles/untitled.dir/Item.cpp.obj"
+  "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Map.cpp" "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug/CMakeFiles/untitled.dir/Map.cpp.obj"
+  "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/main.cpp" "C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/cmake-build-debug/CMakeFiles/untitled.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 

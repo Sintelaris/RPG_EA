@@ -14,8 +14,12 @@ Character::Character() {
     CharType = 1;
     navX = 0;
     navY = 0;
-}
+    ifAlive = true;
+    for (int i = 0; i < 3; i++){
+        inventory[i].setItemConst("nothing");
+    }
 
+}
 void Character::setName(const string &name) {
     Character::name = name;
 }

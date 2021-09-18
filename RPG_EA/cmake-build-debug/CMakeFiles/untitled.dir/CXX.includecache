@@ -6,45 +6,33 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Character.cpp
-Character.h
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Character.h
-
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Character.h
+C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Character.h
 string
 -
 ctime
 -
+Item.h
+C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Item.h
 
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Game.cpp
-Game.h
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Game.h
-
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Game.h
-Map.cpp
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Map.cpp
-iostream
+C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Item.h
+string
 -
-Game.h
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Game.h
 
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Map.cpp
+C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Map.cpp
 Map.h
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Map.h
+C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Map.h
 iostream
 -
 string
 -
 cctype
 -
-
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Map.h
-Character.cpp
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Character.cpp
-ctime
+fstream
 -
 
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/main.cpp
-Game.cpp
-C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Game.cpp
+C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Map.h
+Character.h
+C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/untitled/Character.h
+ctime
+-
 

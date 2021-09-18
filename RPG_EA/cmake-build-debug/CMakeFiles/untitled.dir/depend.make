@@ -3,24 +3,25 @@
 
 CMakeFiles\untitled.dir\Character.cpp.obj: ..\Character.cpp
 CMakeFiles\untitled.dir\Character.cpp.obj: ..\Character.h
+CMakeFiles\untitled.dir\Character.cpp.obj: ..\Item.h
 
-CMakeFiles\untitled.dir\Game.cpp.obj: ..\Character.cpp
 CMakeFiles\untitled.dir\Game.cpp.obj: ..\Character.h
 CMakeFiles\untitled.dir\Game.cpp.obj: ..\Game.cpp
 CMakeFiles\untitled.dir\Game.cpp.obj: ..\Game.h
-CMakeFiles\untitled.dir\Game.cpp.obj: ..\Map.cpp
+CMakeFiles\untitled.dir\Game.cpp.obj: ..\Item.h
 CMakeFiles\untitled.dir\Game.cpp.obj: ..\Map.h
 
-CMakeFiles\untitled.dir\Map.cpp.obj: ..\Character.cpp
+CMakeFiles\untitled.dir\Item.cpp.obj: ..\Item.cpp
+CMakeFiles\untitled.dir\Item.cpp.obj: ..\Item.h
+
 CMakeFiles\untitled.dir\Map.cpp.obj: ..\Character.h
+CMakeFiles\untitled.dir\Map.cpp.obj: ..\Item.h
 CMakeFiles\untitled.dir\Map.cpp.obj: ..\Map.cpp
 CMakeFiles\untitled.dir\Map.cpp.obj: ..\Map.h
 
-CMakeFiles\untitled.dir\main.cpp.obj: ..\Character.cpp
 CMakeFiles\untitled.dir\main.cpp.obj: ..\Character.h
-CMakeFiles\untitled.dir\main.cpp.obj: ..\Game.cpp
 CMakeFiles\untitled.dir\main.cpp.obj: ..\Game.h
-CMakeFiles\untitled.dir\main.cpp.obj: ..\Map.cpp
+CMakeFiles\untitled.dir\main.cpp.obj: ..\Item.h
 CMakeFiles\untitled.dir\main.cpp.obj: ..\Map.h
 CMakeFiles\untitled.dir\main.cpp.obj: ..\main.cpp
 

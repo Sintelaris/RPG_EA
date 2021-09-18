@@ -7,6 +7,7 @@
 
 #include <string>
 #include <ctime>
+#include "Item.h"
 
 using namespace std;
 
@@ -14,9 +15,9 @@ class Character {
 public:
     int CharType;
     int navX, navY;
-
+    bool ifAlive;
+    Item inventory[3];
     Character();
-    //Character(int enemy);
 
 private:
     string name;

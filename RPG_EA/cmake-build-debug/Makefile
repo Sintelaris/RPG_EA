@@ -46,10 +46,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\RPG_EA\RPG_EA"
+CMAKE_SOURCE_DIR = "C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\RPG_EA\RPG_EA\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -76,9 +76,9 @@ rebuild_cache\fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\RPG_EA\RPG_EA\cmake-build-debug\CMakeFiles" "C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\RPG_EA\RPG_EA\cmake-build-debug\\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\CMakeFiles" "C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\RPG_EA\RPG_EA\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Sintelaris\Desktop\Hometasks 2\Advanced programming\untitled\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -166,6 +166,30 @@ Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\untitled.dir\Game.cpp.s
 .PHONY : Game.cpp.s
 
+Item.obj: Item.cpp.obj
+.PHONY : Item.obj
+
+# target to build an object file
+Item.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\untitled.dir\Item.cpp.obj
+.PHONY : Item.cpp.obj
+
+Item.i: Item.cpp.i
+.PHONY : Item.i
+
+# target to preprocess a source file
+Item.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\untitled.dir\Item.cpp.i
+.PHONY : Item.cpp.i
+
+Item.s: Item.cpp.s
+.PHONY : Item.s
+
+# target to generate assembly for a file
+Item.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\untitled.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\untitled.dir\Item.cpp.s
+.PHONY : Item.cpp.s
+
 Map.obj: Map.cpp.obj
 .PHONY : Map.obj
 
@@ -229,6 +253,9 @@ help:
 	@echo ... Game.obj
 	@echo ... Game.i
 	@echo ... Game.s
+	@echo ... Item.obj
+	@echo ... Item.i
+	@echo ... Item.s
 	@echo ... Map.obj
 	@echo ... Map.i
 	@echo ... Map.s

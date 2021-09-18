@@ -3,4 +3,4 @@ project(untitled)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(untitled main.cpp Game.cpp Game.h Character.cpp Character.h Map.cpp Map.h)
+add_executable(untitled main.cpp Game.cpp Game.h Map.cpp Map.h Character.cpp Character.h Item.cpp Item.h)
