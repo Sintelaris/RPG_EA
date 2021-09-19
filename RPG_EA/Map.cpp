@@ -15,7 +15,6 @@ Map::Map() {
     map[4][4] = {0};
     fill();
 }
-
 void Map::mapPrint() {
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 5; j++) {

@@ -14,25 +14,27 @@ ctime
 Item.h
 /Users/amira/CLionProjects/RPG_EA/RPG_EA/Item.h
 
-/Users/amira/CLionProjects/RPG_EA/RPG_EA/Item.h
-string
--
-
-/Users/amira/CLionProjects/RPG_EA/RPG_EA/Map.cpp
-Map.h
-/Users/amira/CLionProjects/RPG_EA/RPG_EA/Map.h
+/Users/amira/CLionProjects/RPG_EA/RPG_EA/Game.h
 iostream
 -
+Map.h
+/Users/amira/CLionProjects/RPG_EA/RPG_EA/Map.h
+
+/Users/amira/CLionProjects/RPG_EA/RPG_EA/Item.h
 string
--
-cctype
--
-fstream
 -
 
 /Users/amira/CLionProjects/RPG_EA/RPG_EA/Map.h
 Character.h
 /Users/amira/CLionProjects/RPG_EA/RPG_EA/Character.h
+ctime
+-
+
+/Users/amira/CLionProjects/RPG_EA/RPG_EA/main.cpp
+Game.h
+/Users/amira/CLionProjects/RPG_EA/RPG_EA/Game.h
+thread
+-
 ctime
 -
 
