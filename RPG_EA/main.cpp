@@ -8,13 +8,20 @@ int random(int num){
     return rand() % num;
 }
 void randomThought_by_Amira(){
-    string thoughts[5] = {
+    string thoughts[11] = {
             "~I wish I could fly...~",
             "~Sometimes I ask myself if this how I want to spend my time...~",
             "~All I want is nothing more to hear you knocking at my door~",
             "~Hm......~",
-            "~I just called to say I love you..~" };
-    cout << "\n" << thoughts[random(4)];
+            "~Osmanthus wine tastes the same as I remember... But where are those who shared the memories?~",
+            "~What would be if I will put water on top of the lava...~",
+            "~Also try Terraria!~",
+            "~Also try Minecraft!~",
+            "~Am I Looking good enough?~",
+            "~I have 5 fingers: 2 on the left hand, 3 on the right hand!~",
+            "~Somebody...~"
+            };
+    cout << "\n" << thoughts[random(10)];
 }
 int main(){
     Game RPG_EA;
