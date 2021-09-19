@@ -183,10 +183,10 @@ bool Map::checkerEnemy(int positionY, int positionX, int CharType) {
             (map[positionY][positionX] != map[positionY + 1][positionX + 1] and map[positionY + 1][positionX + 1] != 0)
             )*/
 
-    if ((CharType != map[positionY - 1][positionX] && map[positionY - 1][positionX] != 0) ||
-        (CharType != map[positionY][positionX - 1] && map[positionY][positionX - 1] != 0) ||
-        (CharType != map[positionY][positionX + 1] && map[positionY][positionX + 1] != 0) ||
-        (CharType != map[positionY + 1][positionX] && map[positionY + 1][positionX] != 0))
+    if ((positionY != 0 && CharType != map[positionY - 1][positionX] && map[positionY - 1][positionX] != 0) ||
+        (positionX != 0 && CharType != map[positionY][positionX - 1] && map[positionY][positionX - 1] != 0) ||
+        (positionX != 4 && CharType != map[positionY][positionX + 1] && map[positionY][positionX + 1] != 0) ||
+        (positionY != 4 && CharType != map[positionY + 1][positionX] && map[positionY + 1][positionX] != 0))
         return true;
     else return false;
 }
