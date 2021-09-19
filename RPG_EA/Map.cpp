@@ -12,8 +12,12 @@
 
 using namespace std;
 Map::Map() {
+    Player_HP = 50;
+    Player_damage = 20;
     map[4][4] = {0};
     fill();
+    Player.setAtk(Player_damage);
+    Player.setHp(Player_HP);
 }
 void Map::mapPrint() {
     for (int i = 0; i < 5; i++) {
@@ -22,11 +26,15 @@ void Map::mapPrint() {
         }
         cout << "\n";
     }
-    cout << "Player HP: " << Player.getHp() << " Position: " << Player.navX << " " << Player.navY << endl;
+    cout << endl << "Player HP: " << Player.getHp() << " Position: " << Player.navX << " " << Player.navY << endl;
     cout << "Player level: " << Player.getLevel() << endl;
-    cout << "Player damage: " << Player.getAtk() << endl;
+    cout << "Player damage: " << Player.getAtk() + Player.inventory[0].damage_bonus + Player.inventory[1].damage_bonus + Player.inventory[2].damage_bonus << endl;
     cout << "Player experience: " << Player.getExp() << endl;
-    cout << "Player MaxHP: " << Player.getMaxHp() << endl;
+    cout << "Player MaxHP: " << Player.getMaxHp() + Player.inventory[0].maxHP_bonus + Player.inventory[1].maxHP_bonus + Player.inventory[2].maxHP_bonus << endl;
+    cout << "Player inventory: " << endl;
+    cout << "Player Item 1: " << Player.inventory[0].type << endl;
+    cout << "Player Item 2: " << Player.inventory[1].type << endl;
+    cout << "Player Item 3: " << Player.inventory[2].type << endl << endl;
 
     cout << "Enemy1 HP: " << enemy1.getHp() << " Position: " << enemy1.navX << " " << enemy1.navY << endl;
     cout << "Enemy2 HP: " << enemy2.getHp() << " Position: " << enemy2.navX << " " << enemy2.navY << endl;
@@ -34,17 +42,24 @@ void Map::mapPrint() {
     cout << "Enemy4 HP: " << enemy4.getHp() << " Position: " << enemy4.navX << " " << enemy4.navY << endl;
     cout << "Enemy5 HP: " << enemy5.getHp() << " Position: " << enemy5.navX << " " << enemy5.navY << endl;
 }
-void Map::addExperience(int add){
+void Map::addExperience(int add, bool kill){ //adding experience when moving and killing
+    if (kill){
+        Player.inventory[Player.loop_item_save].setItemConst(Player.inventory[Player.loop_item_save].Types_of_items[random(9)]);
+        Player.loop_item_save++;
+        Player.loop_item_save = Player.loop_item_save % 3;
+    }
+
     int currentExp = Player.getExp();
-    Player.setExp(add + Player.inventory[0].exp_Bonus + Player.inventory[1].exp_Bonus + Player.inventory[2].exp_Bonus);
-    int currentLevel = Player.getLevel();
+    Player.setExp(currentExp + add + Player.inventory[0].exp_Bonus + Player.inventory[1].exp_Bonus + Player.inventory[2].exp_Bonus);
+
     currentExp = Player.getExp();
     Player.setLevel(currentExp/30);
+    int currentLevel = Player.getLevel();
     int currentAtk = Player.getAtk();
     int currentMaxHp = Player.getMaxHp();
     //int currentHp = Player.getHp();
-    Player.setMaxHp(currentLevel * 2 + 50 + Player.inventory[0].maxHP_bonus + Player.inventory[1].maxHP_bonus + Player.inventory[2].maxHP_bonus);
-    Player.setAtk(currentLevel * 1 + 8 + Player.inventory[0].damage_bonus + Player.inventory[1].damage_bonus + Player.inventory[2].damage_bonus);
+    Player.setMaxHp(currentLevel * 2 + 50 /*+ Player.inventory[0].maxHP_bonus + Player.inventory[1].maxHP_bonus + Player.inventory[2].maxHP_bonus*/);
+    Player.setAtk((currentLevel * 1) + Player_damage /*+ Player.inventory[0].damage_bonus + Player.inventory[1].damage_bonus + Player.inventory[2].damage_bonus*/);
 }
 
 void Map::walk() {
@@ -106,16 +121,16 @@ void Map::walk() {
                 default: cout << "This direction is not exist. Please try again."; break;
             }
         }
-        addExperience(5);
+        addExperience(5, false);
     }
     else if (action.compare("rest") == 0){
         int currentHP = Player.getHp();
         int currentMaxHP = Player.getMaxHp();
         if (currentHP <= currentMaxHP){
-            Player.setHp(currentHP+5);
+            Player.setHp(currentHP + 5 + Player.inventory[0].rest_bonus + Player.inventory[1].rest_bonus + Player.inventory[2].rest_bonus);
         }
-        if (Player.getHp() > Player.getMaxHp()){
-            Player.setHp(Player.getMaxHp());
+        if (Player.getHp() > Player.getMaxHp() + Player.inventory[0].maxHP_bonus + Player.inventory[1].maxHP_bonus + Player.inventory[2].maxHP_bonus){
+            Player.setHp(Player.getMaxHp() + Player.inventory[0].maxHP_bonus + Player.inventory[1].maxHP_bonus + Player.inventory[2].maxHP_bonus);
             cout << "Health restored fully." << endl;
         }
         cout << "Current health: " << Player.getHp() << " hp." << endl;
@@ -126,7 +141,7 @@ void Map::walk() {
         }
         else {
             cout << "Select attack direction." << endl << "'w' to attack up, 'a' to attack left, 's' to attack down, 'd' to attack right." << endl;
-            cout << "'q' to attack up-left, 'e' to attack up-right, 'z' to attack down-left, 'd' to attack down-right." << endl;
+           // cout << "'q' to attack up-left, 'e' to attack up-right, 'z' to attack down-left, 'd' to attack down-right." << endl;
             char Attack_direction;
             cin >> Attack_direction;
             switch(Attack_direction){
@@ -386,7 +401,7 @@ bool Map::ifAlive(Character *current){
     if (current->getHp() <= 0){
         if(current->ifAlive){
             current->setHp(0);
-            addExperience(50);
+            addExperience(50, true);
             map[current->navY][current->navX] = 0;
             current->ifAlive = false;
         }
@@ -412,6 +427,35 @@ int Map::Death_Checker(){
 
 void Map::saveStats() {
     ofstream gamefile ("SaveGame.txt");
+}
+void Map::resetEnemy(Character *enemy){
+    enemy->setMaxHp(50); enemy->setHp(enemy->getMaxHp());
+    enemy->setAtk(15);
+    enemy->setExp(0); enemy->setLevel(0);
+    enemy->ifAlive = true;
+}
+void Map::restart(){
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++)
+            map[i][j] = 0;
+    }
+    resetEnemy(&enemy1);
+    resetEnemy(&enemy2);
+    resetEnemy(&enemy3);
+    resetEnemy(&enemy4);
+    resetEnemy(&enemy5);
+    Player.setAtk(Player_damage);
+    Player.setHp(Player_HP);
+    Player.setMaxHp(Player_HP);
+    Player.setLevel(0);
+    Player.ifAlive = true;
+    Player.setExp(0);
+    Player.setLevel(0);
+    Player.inventory[0].setItemConst("nothing");
+    Player.inventory[1].setItemConst("nothing");
+    Player.inventory[2].setItemConst("nothing");
+
+    fill();
 }
 
 

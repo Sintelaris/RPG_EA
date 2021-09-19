@@ -16,6 +16,7 @@ public:
     int exp_Bonus;
     string type;
     void setItemConst(string type);
+    string Types_of_items[10];
 };
 
 

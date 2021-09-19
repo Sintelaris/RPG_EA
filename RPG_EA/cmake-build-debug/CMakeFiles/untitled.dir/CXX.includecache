@@ -6,35 +6,33 @@
 
 #IncludeRegexTransform: 
 
-/Users/amira/CLionProjects/RPG_EA/RPG_EA/Character.h
+C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Character.h
 string
 -
 ctime
 -
 Item.h
-/Users/amira/CLionProjects/RPG_EA/RPG_EA/Item.h
+C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Item.h
 
-/Users/amira/CLionProjects/RPG_EA/RPG_EA/Game.h
-iostream
--
-Map.h
-/Users/amira/CLionProjects/RPG_EA/RPG_EA/Map.h
-
-/Users/amira/CLionProjects/RPG_EA/RPG_EA/Item.h
+C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Item.h
 string
 -
 
-/Users/amira/CLionProjects/RPG_EA/RPG_EA/Map.h
-Character.h
-/Users/amira/CLionProjects/RPG_EA/RPG_EA/Character.h
-ctime
+C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Map.cpp
+Map.h
+C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Map.h
+iostream
+-
+string
+-
+cctype
+-
+fstream
 -
 
-/Users/amira/CLionProjects/RPG_EA/RPG_EA/main.cpp
-Game.h
-/Users/amira/CLionProjects/RPG_EA/RPG_EA/Game.h
-thread
--
+C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Map.h
+Character.h
+C:/Users/Sintelaris/Desktop/Hometasks 2/Advanced programming/RPG_EA/RPG_EA/Character.h
 ctime
 -
 

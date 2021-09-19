@@ -18,7 +18,7 @@ public:
     bool ifAlive;
     Item inventory[3];
     Character();
-
+    int loop_item_save;
 private:
     string name;
     int maxHP = 50, HP, atk = 5, exp = 0, level = 0;

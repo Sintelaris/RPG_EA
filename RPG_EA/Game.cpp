@@ -40,6 +40,10 @@ void Game::final_menu(){
     if (game_continue == 0){
         isRunning = 0;
     }
+    else {
+        isRunning = 2;
+        field.restart();
+    }
 }
 
 void Game::saveGame() {

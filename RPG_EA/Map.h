@@ -25,9 +25,10 @@ private:
     void setPositions(int CharType, int navY, int navX, Character *current);
     void ifEmpty(int navY, int navX, int charType, Character *current);
 
-    void addExperience(int add);
+    void addExperience(int add, bool kill);
     bool ifAlive(Character *current);
 public:
+    int Player_HP;
     void mapPrint();
     Map();
     int map[5][5]{};
@@ -39,6 +40,8 @@ public:
     void rest(Character *current);
     int Death_Checker();
     void saveStats();
+    int Player_damage;
+    void restart();
 };
 
 

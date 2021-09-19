@@ -8,7 +8,7 @@
 Character::Character() {
     maxHP = 50;
     HP = maxHP;
-    atk = 8;
+    atk = 15;
     exp = 0;
     level = 0;
     CharType = 1;
@@ -18,7 +18,7 @@ Character::Character() {
     for (int i = 0; i < 3; i++){
         inventory[i].setItemConst("nothing");
     }
-
+    loop_item_save = 0;
 }
 void Character::setName(const string &name) {
     Character::name = name;

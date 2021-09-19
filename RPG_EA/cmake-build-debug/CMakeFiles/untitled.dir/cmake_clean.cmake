@@ -1,10 +1,12 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/untitled.dir/Character.cpp.o"
-  "CMakeFiles/untitled.dir/Game.cpp.o"
-  "CMakeFiles/untitled.dir/Item.cpp.o"
-  "CMakeFiles/untitled.dir/Map.cpp.o"
-  "CMakeFiles/untitled.dir/main.cpp.o"
-  "untitled"
+  "CMakeFiles/untitled.dir/Character.cpp.obj"
+  "CMakeFiles/untitled.dir/Game.cpp.obj"
+  "CMakeFiles/untitled.dir/Item.cpp.obj"
+  "CMakeFiles/untitled.dir/Map.cpp.obj"
+  "CMakeFiles/untitled.dir/main.cpp.obj"
+  "untitled.exe"
+  "untitled.exe.manifest"
+  "untitled.lib"
   "untitled.pdb"
 )
 
