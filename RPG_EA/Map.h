@@ -27,6 +27,7 @@ private:
 
     void addExperience(int add, bool kill);
     bool ifAlive(Character *current);
+    void resetEnemy(Character *enemy);
 public:
     int Player_HP;
     void mapPrint();

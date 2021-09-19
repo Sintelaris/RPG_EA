@@ -19,7 +19,7 @@ Map::Map() {
     Player.setAtk(Player_damage);
     Player.setHp(Player_HP);
 }
-void Map::mapPrint() {
+void Map::mapPrint() { //prints the map and current stats
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 5; j++) {
             cout << map[i][j] << " ";
@@ -62,7 +62,7 @@ void Map::addExperience(int add, bool kill){ //adding experience when moving and
     Player.setAtk((currentLevel * 1) + Player_damage /*+ Player.inventory[0].damage_bonus + Player.inventory[1].damage_bonus + Player.inventory[2].damage_bonus*/);
 }
 
-void Map::walk() {
+void Map::walk() { //implements all three actions of the player
     cout << "You can move and rest. Input 'move' to select move direction, input 'rest' to heal yourself." << endl;
     string action;
     bool attack_availability = false;
@@ -159,7 +159,7 @@ void Map::walk() {
 
 }
 
-void Map::ifEmpty(int navY, int navX, int charType, Character *current) {
+void Map::ifEmpty(int navY, int navX, int charType, Character *current) { //checks if the specific coordinate is empty
     if (map[navY][navX] == 0){
         setPositions(charType, navY, navX, current);
     } else {
@@ -170,12 +170,12 @@ void Map::ifEmpty(int navY, int navX, int charType, Character *current) {
         setPositions(charType, navY, navX, current);
     }
 }
-void Map::setPositions(int CharType, int navY, int navX, Character *current) {
+void Map::setPositions(int CharType, int navY, int navX, Character *current) { //assigns the coordinates to character
     current->setCharType(CharType);
     current->setNavY(navY); current->setNavX(navX);
     map[current->navY][current->navX] = CharType;
 }
-void Map::fill(){
+void Map::fill(){ //fills the map of the game
     int e1Y = random(4), e1X = random(4), e2X = random(4), e2Y = random(4), e3X = random(4), e3Y = random(4), e4X = random(4), e4Y = random(4), e5X = random(4), e5Y = random(4);
     int plY = random(4), plX = random(4);
     setPositions(2, e1Y, e1X, &enemy1);
@@ -186,7 +186,7 @@ void Map::fill(){
     ifEmpty(plY, plX, 1, &Player);
 }
 
-bool Map::checkerEnemy(int positionY, int positionX, int CharType) {
+bool Map::checkerEnemy(int positionY, int positionX, int CharType) { //checks if there is any rival nearby
     /*if (    (map[positionY][positionX] != map[positionY - 1][positionX - 1] and map[positionY - 1][positionX - 1] != 0) and
             (map[positionY][positionX] != map[positionY - 1][positionX] and map[positionY - 1][positionX] != 0) and
             (map[positionY][positionX] != map[positionY - 1][positionX + 1] and map[positionY - 1][positionX + 1] != 0) and
@@ -205,7 +205,7 @@ bool Map::checkerEnemy(int positionY, int positionX, int CharType) {
     else return false;
 }
 
-string Map::checkMove(int navY, int navX){
+string Map::checkMove(int navY, int navX){ //checks the possibility to move to the 4 directions
     string checker;
     checker = checkW(navY, navX);
     checker += checkA(navX, navY);
@@ -213,7 +213,7 @@ string Map::checkMove(int navY, int navX){
     checker += checkD(navX, navY);
     return checker;
 }
-char Map::checkW(int Y, int X) {
+char Map::checkW(int Y, int X) { //checks the up cell
     if (Y != 0){
         if (map[Y-1][X] != 0) {
             return '0';
@@ -224,7 +224,7 @@ char Map::checkW(int Y, int X) {
         return '0';
     }
 }
-char Map::checkA(int X, int Y){
+char Map::checkA(int X, int Y){ //checks the left cell
     if (X != 0) {
         if (map[Y][X-1] != 0) {
             return '0';
@@ -235,7 +235,7 @@ char Map::checkA(int X, int Y){
         return '0';
     }
 }
-char Map::checkS(int Y, int X){
+char Map::checkS(int Y, int X){ //checks the right  cell
     if (Y != 4) {
         if (map[Y+1][X] != 0) {
             return '0';
@@ -246,7 +246,7 @@ char Map::checkS(int Y, int X){
         return '0';
     }
 }
-char Map::checkD(int X, int Y){
+char Map::checkD(int X, int Y){ //checks the down cell
     if (X != 4) {
         if (map[Y][X+1] != 0) {
             return '0';
@@ -258,7 +258,7 @@ char Map::checkD(int X, int Y){
     }
 }
 
-void Map::move(char direction, Character *Body){
+void Map::move(char direction, Character *Body){ //moves the character to the specific direction
     switch(direction){
         case 'w': {
             map[Body->navY][Body->navX] = 0;
@@ -286,18 +286,22 @@ void Map::move(char direction, Character *Body){
         }
     }
 }
-void Map::AIwalk(Character *enemy){
+void Map::AIwalk(Character *enemy){ //implements AI actions
     string directionAV = checkMove(enemy->navY, enemy->navX);
     int choice;
     if (checkerEnemy(enemy->navY, enemy->navX, enemy->CharType)){
         choice = random(2);
-        if (enemy->getHp() < 20){
+        if (enemy->getHp() < 15){
+            if (enemy->getHp() <= 0){
+                return;
+            }
             if (enemy->getHp() < enemy->getMaxHp()){
                 enemy->setHp(enemy->getHp()+5);
             }
             if (enemy->getHp() > enemy->getMaxHp()){
                 enemy->setHp(enemy->getMaxHp());
             }
+            cout << enemy->navX << " " << enemy->navY << " has rest" << endl;
         } else{
             switch (choice) {
                 case 0:
@@ -329,9 +333,20 @@ void Map::AIwalk(Character *enemy){
                 }
             }
         }
-
     }
     else {
+        if (enemy->getHp() < 15){
+            if (enemy->getHp() <= 0){
+                return;
+            }
+            if (enemy->getHp() < enemy->getMaxHp()){
+                enemy->setHp(enemy->getHp()+5);
+            }
+            if (enemy->getHp() > enemy->getMaxHp()){
+                enemy->setHp(enemy->getMaxHp());
+            }
+            cout << enemy->navX << " " << enemy->navY << " has rest" << endl;
+        }
         choice = random(1);
         switch (choice) {
             case 0:
@@ -356,37 +371,39 @@ void Map::AIwalk(Character *enemy){
 
 
 }
-void Map::walkEnemy() {
+void Map::walkEnemy() { //implements all moves of all enemies
     AIwalk(&enemy1);
     AIwalk(&enemy2);
     AIwalk(&enemy3);
     AIwalk(&enemy4);
     AIwalk(&enemy5);
 }
-int Map::random(int num) {
+int Map::random(int num) { //returns the random number in the given rank
     srand(time(NULL));
     return rand() % num;
 }
-void Map::Attack_enemy(int positionY, int positionX){
+void Map::Attack_enemy(int positionY, int positionX){ //implements attack to the enemy by coordinates
+    int plAt = Player.getAtk() + Player.inventory[0].damage_bonus + Player.inventory[1].damage_bonus + Player.inventory[2].damage_bonus;
+    cout << "player attack is " << plAt <<endl;
     if (enemy1.navY == positionY && enemy1.navX == positionX){
-        enemy1.setHp(enemy1.getHp() - Player.getAtk());
+        enemy1.setHp(enemy1.getHp() - plAt);
     }
     else if (enemy2.navY == positionY && enemy2.navX == positionX){
-        enemy2.setHp(enemy2.getHp() - Player.getAtk());
+        enemy2.setHp(enemy2.getHp() - plAt);
     }
     else if (enemy3.navY == positionY && enemy3.navX == positionX){
-        enemy3.setHp(enemy3.getHp() - Player.getAtk());
+        enemy3.setHp(enemy3.getHp() - plAt);
     }
     else if (enemy4.navY == positionY && enemy4.navX == positionX){
-        enemy4.setHp(enemy4.getHp() - Player.getAtk());
+        enemy4.setHp(enemy4.getHp() - plAt);
     }
     else if (enemy5.navY == positionY && enemy5.navX == positionX){
-        enemy5.setHp(enemy5.getHp() - Player.getAtk());
+        enemy5.setHp(enemy5.getHp() - plAt);
     }
     else cout << "Miss!";
 
 };
-void Map::rest(Character *current){
+void Map::rest(Character *current){ //implements the rest action by increasing the HP
     if (current->getHp() < current->getMaxHp()){
         current->setHp(current->getHp()+5);
     }
@@ -397,19 +414,20 @@ void Map::rest(Character *current){
 
 
 
-bool Map::ifAlive(Character *current){
+bool Map::ifAlive(Character *current){ //checks if the character is alive
     if (current->getHp() <= 0){
         if(current->ifAlive){
             current->setHp(0);
             addExperience(50, true);
             map[current->navY][current->navX] = 0;
             current->ifAlive = false;
+            current->setNavY(-1); current->setNavX(-1);
         }
     }
     return current->ifAlive;
 }
 
-int Map::Death_Checker(){
+int Map::Death_Checker(){ //checks all characters for aliveness
     bool enemy1_alive = ifAlive(&enemy1);
     bool enemy2_alive = ifAlive(&enemy2);
     bool enemy3_alive = ifAlive(&enemy3);
